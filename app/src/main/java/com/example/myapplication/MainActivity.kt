@@ -58,9 +58,9 @@ class MainActivity : AppCompatActivity() {
             // Create your custom animation.
             val slideOut = ObjectAnimator.ofFloat(
                 splashScreenView,
-                View.TRANSLATION_Y,
+                View.TRANSLATION_X,
                 0f,
-                -splashScreenView.height.toFloat()
+                -splashScreenView.width.toFloat()
             )
             slideOut.interpolator = LinearInterpolator()
             slideOut.duration = 300L
