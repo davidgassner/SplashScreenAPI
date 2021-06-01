@@ -38,42 +38,42 @@ class MainActivity : AppCompatActivity() {
                 .setAction("Action", null).show()
         }
 
-        // Set up an OnPreDrawListener to the root view.
-        val content: View = findViewById(android.R.id.content)
-        content.viewTreeObserver.addOnPreDrawListener(
-            object : ViewTreeObserver.OnPreDrawListener {
-                override fun onPreDraw(): Boolean {
-                    Thread.sleep(2000)
-                    // Check if the initial data is ready.
-                    // The content is ready; start drawing.
-                    content.viewTreeObserver.removeOnPreDrawListener(this)
-                    return true
-                }
-            }
-        )
+//        // Set up an OnPreDrawListener to the root view.
+//        val content: View = findViewById(android.R.id.content)
+//        content.viewTreeObserver.addOnPreDrawListener(
+//            object : ViewTreeObserver.OnPreDrawListener {
+//                override fun onPreDraw(): Boolean {
+//                    Thread.sleep(2000)
+//                    // Check if the initial data is ready.
+//                    // The content is ready; start drawing.
+//                    content.viewTreeObserver.removeOnPreDrawListener(this)
+//                    return true
+//                }
+//            }
+//        )
 
         // Add a callback that's called when the splash screen is animating to
         // the app content.
-        splashScreen.setOnExitAnimationListener { splashScreenView ->
-            // Create your custom animation.
-            val slideOut = ObjectAnimator.ofFloat(
-                splashScreenView,
-                View.TRANSLATION_X,
-                0f,
-                -splashScreenView.width.toFloat()
-            )
-            slideOut.interpolator = LinearInterpolator()
-            slideOut.duration = 300L
-
-            // Call SplashScreenView.remove at the end of your custom animation.
-            slideOut.doOnEnd {
-                splashScreenView.remove()
-            }
-
-            // Run your animation.
-            slideOut.start()
-
-        }
+//        splashScreen.setOnExitAnimationListener { splashScreenView ->
+//            // Create your custom animation.
+//            val slideOut = ObjectAnimator.ofFloat(
+//                splashScreenView,
+//                View.TRANSLATION_X,
+//                0f,
+//                -splashScreenView.width.toFloat()
+//            )
+//            slideOut.interpolator = LinearInterpolator()
+//            slideOut.duration = 300L
+//
+//            // Call SplashScreenView.remove at the end of your custom animation.
+//            slideOut.doOnEnd {
+//                splashScreenView.remove()
+//            }
+//
+//            // Run your animation.
+//            slideOut.start()
+//
+//        }
 
     }
 
